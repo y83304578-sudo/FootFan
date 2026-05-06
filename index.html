@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passion Football</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(90deg, #16a34a, #22c55e);
+      padding: 25px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #15803d;
+      padding: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .score {
+      font-size: 22px;
+      color: #22c55e;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+      color: black;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⚽ Passion Football</h1>
+  <p>Scores en direct + compétitions</p>
+</header>
+
+<nav>
+  <a href="#live">Live</a>
+  <a href="#ldc">LDC</a>
+  <a href="#worldcup">Coupe du Monde</a>
+</nav>
+
+<section id="live" class="section">
+  <h2>🔴 Scores en direct</h2>
+  <button onclick="loadScores()">Actualiser les scores</button>
+  <div id="liveScores" class="cards"></div>
+</section>
+
+<section id="ldc" class="section">
+  <h2>🏆 Ligue des Champions</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>PSG vs Bayern</h3>
+      <div class="score">2 - 1</div>
+    </div>
+  </div>
+</section>
+
+<section id="worldcup" class="section">
+  <h2>🌍 Coupe du Monde</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>France vs Argentine</h3>
+      <div class="score">2 - 3</div>
+    </div>
+  </div>
+</section>
+
+<section id="coupe-asie">
+  <h2>🏆 Coupe d'Asie (AFC Asian Cup)</h2>
+  <p>Dernière édition et résultats récents :</p>
+
+  <ul>
+    <li>🇶🇦 Qatar 2 - 1 Japon</li>
+    <li>🇰🇷 Corée du Sud 3 - 0 Arabie Saoudite</li>
+    <li>🇮🇷 Iran 1 - 1 Australie</li>
+  </ul>
+</section>
+
+<section id="coupe-afrique">
+  <h2>🏆 Coupe d'Afrique des Nations (CAN)</h2>
+  <p>Derniers matchs importants :</p>
+
+  <ul>
+    <li>🇸🇳 Sénégal 2 - 0 Côte d'Ivoire</li>
+    <li>🇲🇦 Maroc 1 - 1 Égypte</li>
+    <li>🇩🇿 Algérie 3 - 1 Nigeria</li>
+  </ul>
+</section>
+
+<section id="derniers-matchs">
+  <h2>📊 Derniers matchs</h2>
+
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Match</th>
+      <th>Score</th>
+      <th>Compétition</th>
+    </tr>
+    <tr>
+      <td>France vs Allemagne</td>
+      <td>2 - 2</td>
+      <td>Amical</td>
+    </tr>
+    <tr>
+      <td>Brésil vs Argentine</td>
+      <td>1 - 0</td>
+      <td>Éliminatoires</td>
+    </tr>
+    <tr>
+      <td>Espagne vs Portugal</td>
+      <td>3 - 2</td>
+      <td>Ligue des Nations</td>
+    </tr>
+  </table>
+</section>
+
+<section id="classement">
+  <h2>📊 Classement des équipes</h2>
+
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Position</th>
+      <th>Équipe</th>
+      <th>Points</th>
+      <th>Différence de buts</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>🇫🇷 France</td>
+      <td>18</td>
+      <td>+12</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>🇧🇷 Brésil</td>
+      <td>16</td>
+      <td>+9</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>🇦🇷 Argentine</td>
+      <td>15</td>
+      <td>+7</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>🇩🇪 Allemagne</td>
+      <td>13</td>
+      <td>+4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>🇪🇸 Espagne</td>
+      <td>12</td>
+      <td>+3</td>
+    </tr>
+  </table>
+</section>
+
+<section id="calendrier">
+  <h2>📅 Calendrier des matchs</h2>
+
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Date</th>
+      <th>Match</th>
+      <th>Compétition</th>
+    </tr>
+    <tr>
+      <td>10 Mai 2026</td>
+      <td>🇫🇷 France vs 🇩🇪 Allemagne</td>
+      <td>Ligue des Nations</td>
+    </tr>
+    <tr>
+      <td>12 Mai 2026</td>
+      <td>🇧🇷 Brésil vs 🇦🇷 Argentine</td>
+      <td>Amical</td>
+    </tr>
+    <tr>
+      <td>15 Mai 2026</td>
+      <td>🇪🇸 Espagne vs 🇵🇹 Portugal</td>
+      <td>Qualification Euro</td>
+    </tr>
+    <tr>
+      <td>18 Mai 2026</td>
+      <td>🇲🇦 Maroc vs 🇸🇳 Sénégal</td>
+      <td>CAN</td>
+    </tr>
+  </table>
+</section>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1a2a;
+    color: #ffffff;
+  }
+
+  section {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #13293d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    color: #ffffff; /* IMPORTANT: force le texte blanc */
+  }
+
+  h2 {
+    color: #4fc3f7;
+    border-left: 4px solid #1e88e5;
+    padding-left: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0f2233;
+    color: #ffffff; /* IMPORTANT */
+  }
+
+  th {
+    background: #1e88e5;
+    color: #ffffff;
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+    text-align: center;
+    color: #ffffff; /* IMPORTANT */
+    border-bottom: 1px solid #1f3b57;
+  }
+
+  tr:hover {
+    background: #1b3a57;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    color: #ffffff;
+  }
+
+  li {
+    padding: 8px;
+    border-bottom: 1px solid #1f3b57;
+    color: #ffffff;
+  }
+
+  p {
+    color: #ffffff;
+  }
+</style>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">⚽ FootZone</div>
+
+    <ul class="nav-links">
+      <li><a href="#">🏠 Accueil</a></li>
+      <li><a href="#classement">📊 Classement</a></li>
+      <li><a href="#calendrier">📅 Matchs</a></li>
+      <li><a href="#coupe-asie">🌏 Compétitions</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <a href="#" class="login">🔐 Connexion</a>
+      <a href="#" class="signup">🆕 Créer un compte</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1a2a;
+    color: white;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #102a43;
+    padding: 15px 25px;
+    border-bottom: 2px solid #1e88e5;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4fc3f7;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    background: #1e88e5;
+  }
+
+  .auth-buttons a {
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .login {
+    background: #1e88e5;
+  }
+
+  .signup {
+    background: #00c853;
+  }
+
+  .login:hover {
+    background: #1565c0;
+  }
+
+  .signup:hover {
+    background: #00a844;
+  }
+</style>
+
+<section id="signup">
+  <h2>🆕 Créer un compte</h2>
+
+  <input type="text" id="signupUser" placeholder="Pseudo"><br><br>
+  <input type="password" id="signupPass" placeholder="Mot de passe"><br><br>
+
+  <button onclick="signup()">S'inscrire</button>
+
+  <p id="signupMsg"></p>
+</section>
+
+<section id="login">
+  <h2>🔐 Connexion</h2>
+
+  <input type="text" id="loginUser" placeholder="Pseudo"><br><br>
+  <input type="password" id="loginPass" placeholder="Mot de passe"><br><br>
+
+  <button onclick="login()">Se connecter</button>
+
+  <p id="loginMsg"></p>
+</section>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">⚽ FootZone</div>
+
+    <ul class="nav-links">
+      <li><a href="#accueil">🏠 Accueil</a></li>
+      <li><a href="#classement">📊 Classement</a></li>
+      <li><a href="#calendrier">📅 Matchs</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <a href="#login" class="login">🔐 Connexion</a>
+      <a href="#signup" class="signup">🆕 Créer un compte</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function signup() {
+    let user = document.getElementById("signupUser").value;
+    let pass = document.getElementById("signupPass").value;
+
+    if (!user || !pass) {
+      document.getElementById("signupMsg").innerText = "Remplis tous les champs ❌";
+      return;
+    }
+
+    localStorage.setItem("user_" + user, pass);
+    document.getElementById("signupMsg").innerText = "Compte créé ✅";
+  }
+
+  function login() {
+    let user = document.getElementById("loginUser").value;
+    let pass = document.getElementById("loginPass").value;
+
+    let savedPass = localStorage.getItem("user_" + user);
+
+    if (savedPass === pass) {
+      document.getElementById("loginMsg").innerText = "Connexion réussie ⚽🔥";
+      localStorage.setItem("loggedUser", user);
+    } else {
+      document.getElementById("loginMsg").innerText = "Erreur ❌";
+    }
+  }
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<section id="sondage">
+  <h2>🗳️ Sondage : Qui va gagner les prochains matchs ?</h2>
+
+  <p>🇫🇷 France vs 🇩🇪 Allemagne</p>
+
+  <button onclick="vote('France')">🇫🇷 France</button>
+  <button onclick="vote('Allemagne')">🇩🇪 Allemagne</button>
+
+  <p id="result"></p>
+</section>
+
+<script>
+  let votes = {
+    France: 0,
+    Allemagne: 0
+  };
+
+  function vote(team) {
+    votes[team]++;
+
+    document.getElementById("result").innerText =
+      "Votes → France: " + votes.France + " | Allemagne: " + votes.Allemagne;
+  }
+</script>
+
+<section id="calendrier-ville">
+  <h2>📅 Calendrier des matchs (Ville)</h2>
+
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Date</th>
+      <th>Match</th>
+      <th>Lieu</th>
+    </tr>
+
+    <tr>
+      <td>08 Mai 2026</td>
+      <td>FC Paris Nord vs FC Paris Sud</td>
+      <td>Stade Municipal</td>
+    </tr>
+
+    <tr>
+      <td>10 Mai 2026</td>
+      <td>FC Banlieue Est vs FC Banlieue Ouest</td>
+      <td>Stade Central</td>
+    </tr>
+
+    <tr>
+      <td>12 Mai 2026</td>
+      <td>Jeunes Gennevilliers vs AS Clichy</td>
+      <td>Stade Local</td>
+    </tr>
+
+    <tr>
+      <td>15 Mai 2026</td>
+      <td>FC Argenteuil vs FC Colombes</td>
+      <td>Stade Municipal Nord</td>
+    </tr>
+  </table>
+</section>
+
+<style>
+  button {
+    margin: 5px;
+    padding: 10px;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #1565c0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0f2233;
+    color: white;
+  }
+
+  th {
+    background: #1e88e5;
+    color: white;
+  }
+
+  td, th {
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+
+<section id="match-du-jour">
+  <h2>📣 Match du jour</h2>
+
+  <div class="notif">
+    ⚽ Aujourd’hui : FC Paris Nord 🆚 FC Paris Sud<br>
+    🕒 18h00 - Stade Municipal
+  </div>
+</section>
+
+<style>
+  .notif {
+    background: #1e88e5;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+</style>
+
+<section id="sondage">
+  <h2>🗳️ Sondage des matchs</h2>
+
+  <div>
+    <p>🇫🇷 FC Paris Nord vs FC Paris Sud</p>
+    <button onclick="vote('ParisNord')">Paris Nord</button>
+    <button onclick="vote('ParisSud')">Paris Sud</button>
+  </div>
+
+  <div>
+    <p>⚽ Gennevilliers vs Clichy</p>
+    <button onclick="vote('Gennevilliers')">Gennevilliers</button>
+    <button onclick="vote('Clichy')">Clichy</button>
+  </div>
+
+  <p id="voteResult"></p>
+</section>
+
+<script>
+  let votes = {
+    ParisNord: 0,
+    ParisSud: 0,
+    Gennevilliers: 0,
+    Clichy: 0
+  };
+
+  function vote(team) {
+    votes[team]++;
+
+    document.getElementById("voteResult").innerText =
+      "Votes → Paris Nord: " + votes.ParisNord +
+      " | Paris Sud: " + votes.ParisSud +
+      " | Gennevilliers: " + votes.Gennevilliers +
+      " | Clichy: " + votes.Clichy;
+  }
+</script>
+
+<section id="commentaires">
+  <h2>💬 Commentaires</h2>
+
+  <input type="text" id="commentInput" placeholder="Écris un commentaire...">
+  <button onclick="addComment()">Envoyer</button>
+
+  <ul id="commentList"></ul>
+</section>
+
+<script>
+  function addComment() {
+    let text = document.getElementById("commentInput").value;
+
+    if (text === "") return;
+
+    let li = document.createElement("li");
+    li.innerText = text;
+
+    document.getElementById("commentList").appendChild(li);
+
+    document.getElementById("commentInput").value = "";
+  }
+</script>
+
+<style>
+  #commentaires {
+    background: #13293d;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 8px;
+    border: none;
+  }
+
+  li {
+    list-style: none;
+    padding: 8px;
+    border-bottom: 1px solid #1f3b57;
+    color: white;
+  }
+</style>
+
+<section id="classement-votes">
+  <h2>📊 Classement des votes en temps réel</h2>
+
+  <button onclick="vote('ParisNord')">FC Paris Nord</button>
+  <button onclick="vote('ParisSud')">FC Paris Sud</button>
+  <button onclick="vote('Gennevilliers')">Gennevilliers</button>
+  <button onclick="vote('Clichy')">Clichy</button>
+
+  <ul id="ranking"></ul>
+</section>
+
+<script>
+  let votes = {
+    "FC Paris Nord": 0,
+    "FC Paris Sud": 0,
+    "Gennevilliers": 0,
+    "Clichy": 0
+  };
+
+  function vote(team) {
+    votes[team]++;
+
+    updateRanking();
+  }
+
+  function updateRanking() {
+    let ranking = document.getElementById("ranking");
+    ranking.innerHTML = "";
+
+    // trier du + grand au + petit
+    let sorted = Object.entries(votes).sort((a, b) => b[1] - a[1]);
+
+    sorted.forEach(item => {
+      let li = document.createElement("li");
+      li.innerText = item[0] + " ⚽ → " + item[1] + " votes";
+      ranking.appendChild(li);
+    });
+  }
+
+  updateRanking();
+</script>
+
+<section id="chat">
+  <h2>💬 Chat des supporters</h2>
+
+  <input type="text" id="chatInput" placeholder="Écris ton message ⚽🔥😂">
+  <button onclick="sendMessage()">Envoyer</button>
+
+  <ul id="chatList"></ul>
+</section>
+
+<script>
+  function sendMessage() {
+    let msg = document.getElementById("chatInput").value;
+
+    if (msg === "") return;
+
+    let li = document.createElement("li");
+    li.innerText = msg;
+
+    document.getElementById("chatList").appendChild(li);
+
+    document.getElementById("chatInput").value = "";
+  }
+</script>
+
+<style>
+  #chat, #classement-votes {
+    margin: 20px;
+    padding: 15px;
+    background: #13293d;
+    border-radius: 12px;
+    color: white;
+  }
+
+  button {
+    margin: 5px;
+    padding: 10px;
+    background: #1e88e5;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #1565c0;
+  }
+
+  input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 8px;
+    border: none;
+  }
+
+  li {
+    list-style: none;
+    padding: 6px;
+    border-bottom: 1px solid #1f3b57;
+  }
+</style>
+
+<section id="ldc">
+  <h2>🏆 Ligue des Champions - Matchs</h2>
+
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Date</th>
+      <th>Match</th>
+      <th>Stade</th>
+    </tr>
+
+    <tr>
+      <td>07 Mai 2026</td>
+      <td>⚽ Real Madrid vs Manchester City</td>
+      <td>Santiago Bernabéu</td>
+    </tr>
+
+    <tr>
+      <td>08 Mai 2026</td>
+      <td>⚽ Bayern Munich vs PSG</td>
+      <td>Allianz Arena</td>
+    </tr>
+
+    <tr>
+      <td>14 Mai 2026</td>
+      <td>⚽ Liverpool vs FC Barcelone</td>
+      <td>Anfield</td>
+    </tr>
+
+    <tr>
+      <td>15 Mai 2026</td>
+      <td>⚽ Inter Milan vs Arsenal</td>
+      <td>San Siro</td>
+    </tr>
+  </table>
+</section>
+
+<style>
+  #ldc {
+    margin: 20px;
+    padding: 15px;
+    background: #13293d;
+    border-radius: 12px;
+    color: white;
+  }
+
+  #ldc h2 {
+    color: #4fc3f7;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0f2233;
+  }
+
+  th {
+    background: #1e88e5;
+    color: white;
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #1f3b57;
+    color: white;
+  }
+
+  tr:hover {
+    background: #1b3a57;
+  }
+</style>
+
+<section id="match-live">
+  <h2>🔴 Matchs en direct</h2>
+
+  <div class="match">
+    <h3>Real Madrid 🆚 Manchester City</h3>
+    <p>Score : <span id="score1">0 - 0</span></p>
+    <p>Status : 🔴 En cours</p>
+  </div>
+
+  <div class="match">
+    <h3>PSG 🆚 Bayern Munich</h3>
+    <p>Score : <span id="score2">0 - 0</span></p>
+    <p>Status : 🔴 En cours</p>
+  </div>
+</section>
+
+<script>
+  let score1A = 0;
+  let score1B = 0;
+
+  let score2A = 0;
+  let score2B = 0;
+
+  function updateScores() {
+    // match 1
+    score1A += Math.floor(Math.random() * 2);
+    score1B += Math.floor(Math.random() * 2);
+
+    document.getElementById("score1").innerText =
+      score1A + " - " + score1B;
+
+    // match 2
+    score2A += Math.floor(Math.random() * 2);
+    score2B += Math.floor(Math.random() * 2);
+
+    document.getElementById("score2").innerText =
+      score2A + " - " + score2B;
+  }
+
+  setInterval(updateScores, 5000); // toutes les 5 secondes
+</script>
+
+<style>
+  #match-live {
+    margin: 20px;
+    padding: 15px;
+    background: #13293d;
+    border-radius: 12px;
+    color: white;
+  }
+
+  .match {
+    background: #0f2233;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-left: 4px solid #e53935;
+  }
+
+  .match h3 {
+    margin: 0;
+    color: #4fc3f7;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+</style>
+
+<section id="match-live-tv">
+  <h2>🔴 Match en direct TV</h2>
+
+  <div class="match-tv">
+    <h3>Real Madrid 🆚 Manchester City</h3>
+
+    <p>⏱️ Minute : <span id="minute">0</span>'</p>
+    <p>📊 Score : <span id="score">0 - 0</span></p>
+
+    <p>📡 Statut : 🔴 En direct</p>
+  </div>
+</section>
+
+<section id="live-commentary">
+  <h2>🎙️ Commentaire en direct</h2>
+
+  <div id="comments-live">
+    <p>📡 Le match vient de commencer !</p>
+  </div>
+</section>
+
+<script>
+  let minute = 0;
+  let scoreA = 0;
+  let scoreB = 0;
+
+  let comments = [
+    "⚽ Coup d’envoi du match !",
+    "🔥 Pression énorme de l’équipe domicile !",
+    "⚡ Contre-attaque rapide !",
+    "🚨 Occasion dangereuse !!",
+    "🎯 Tir cadré !!!",
+    "📡 Le public est en feu !"
+  ];
+
+  function updateLive() {
+    // ⏱️ minute
+    minute++;
+    document.getElementById("minute").innerText = minute;
+
+    // ⚽ score aléatoire
+    if (Math.random() < 0.3) {
+      scoreA += Math.floor(Math.random() * 2);
+      scoreB += Math.floor(Math.random() * 2);
+
+      document.getElementById("score").innerText =
+        scoreA + " - " + scoreB;
+    }
+
+    // 🎙️ commentaire live
+    let randomComment = comments[Math.floor(Math.random() * comments.length)];
+
+    let p = document.createElement("p");
+    p.innerText = "📡 " + minute + "' - " + randomComment;
+
+    document.getElementById("comments-live").prepend(p);
+  }
+
+  setInterval(updateLive, 4000); // toutes les 4 sec
+</script>
+
+<style>
+  #match-live-tv, #live-commentary {
+    margin: 20px;
+    padding: 15px;
+    background: #13293d;
+    border-radius: 12px;
+    color: white;
+  }
+
+  .match-tv {
+    background: #0f2233;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #e53935;
+  }
+
+  #comments-live {
+    max-height: 250px;
+    overflow-y: auto;
+    background: #0f2233;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #comments-live p {
+    border-bottom: 1px solid #1f3b57;
+    padding: 5px;
+  }
+
+  h2 {
+    color: #4fc3f7;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+</style>
+
+<footer>
+  <p>© 2026 Passion Football</p>
+</footer>
+
+<script>
+async function loadScores() {
+  const container = document.getElementById("liveScores");
+  container.innerHTML = "Chargement...";
+
+  try {
+    // API gratuite (exemple - nécessite clé API si réel)
+    const response = await fetch("https://api.football-data.org/v4/matches", {
+      headers: { "X-Auth-Token": "ba979e74e0694a8c997b7c702a2ad0b0" }
+    });
+
+    const data = await response.json();
+
+    container.innerHTML = "";
+
+    data.matches.slice(0,6).forEach(match => {
+      const div = document.createElement("div");
+      div.className = "card";
+
+      div.innerHTML = `
+        <h3>${match.homeTeam.name} vs ${match.awayTeam.name}</h3>
+        <div class="score">${match.score.fullTime.home} - ${match.score.fullTime.away}</div>
+        <p>${match.competition.name}</p>
+      `;
+
+      container.appendChild(div);
+    });
+
+  } catch (error) {
+    container.innerHTML
+  }
+}
+</script>
+
+</body>
+</html>
